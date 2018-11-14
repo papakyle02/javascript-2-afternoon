@@ -16,10 +16,11 @@
 
 var me = {
   name: 'Kyle',
-  age: 32
+  age: 33
 }
 
-alert(me.name);
+alert(me.name)
+
 
 
 ////////// PROBLEM 2 //////////
@@ -31,9 +32,9 @@ alert(me.name);
 
 var favoriteThings = {
   band: 'Father John Misty',
-  food: 'Pizza',
-  person: 'Nico',
-  book: 'Where the Wild Things Are',
+  food: 'pizza',
+  person: 'Mom',
+  book: 'Cannery Row',
   movie: 'Shaun of the Dead',
   holiday: 'Christmas'
 }
@@ -44,8 +45,10 @@ var favoriteThings = {
   After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 */
 
-favoriteThings.car = 'Tundra'
-favoriteThings.brand = 'Toyota'
+// favoriteThings.car = 'Tundra';
+favoriteThings.brand = 'Toyota';
+
+favoriteThings['car'] = 'Tundra'
 
 
 
@@ -69,6 +72,7 @@ favoriteThings.book = 'Harry Potter'
 */
 
 var backPack = {}
+
 var item = 'firstPocket'
 
 backPack[item] = 'chapstick'
@@ -78,6 +82,7 @@ backPack[item] = 'chapstick'
 /*
   After you do the above, alert your entire backPack object.
 */
+
 alert(backPack)
 
 
@@ -110,8 +115,13 @@ var user2 = {
   name -> 'Tyler S. McGinnis' and email -> 'tyler.mcginnis@devmounta.in'. 
   Make that change without modifying the original object code above.
 */
+
 user2.name = 'Tyler S. McGinnis'
 user2.email = 'tyler.mcginnis@devmounta.in'
+
+
+
+
 
 
 
@@ -134,18 +144,14 @@ var methodCollection = {}
 
 
 
+
 /*
   Now add two methods (functions that are properties on objects) to your methodCollection object. 
   One called 'alertHello' which alerts 'hello' and another method called 'logHello' which logs 'hello' to the console. 
 */
 
-methodCollection.alertHello = function() {
-  alert('hello')
-}
-
-methodCollection.logHello = function() {
-  console.log('hello');
-}
+methodCollection.alertHello = () => alert('hello')
+methodCollection.logHello = () => console.log('hello')
 
 
 
@@ -165,7 +171,7 @@ methodCollection.logHello();
   Return a new object with all of the information that you passed in.
 */
 
-function makePerson(name, birthday, ssn) {
+var makePerson = (name, birthday, ssn) => {
   return {
     name,
     birthday,
@@ -182,7 +188,7 @@ function makePerson(name, birthday, ssn) {
   Return that object so that whenever you invoke makeCard, you get a brand new credit card.
 */
 
-function makeCard(cardNumber, expirationDate, securityCode) {
+var makeCard = (cardNumber, expirationDate, securityCode) => {
   return {
     cardNumber,
     expirationDate,
